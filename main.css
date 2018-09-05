@@ -4,6 +4,7 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -8487,4 +8488,51 @@ a.text-dark:hover, a.text-dark:focus {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+
+:root {
+  --color-bg: #222222;
+  --color-font: #c8c8c8;
+  --color-hr: #dddddd;
+}
+
+.header-navbar, .header-navbar .navbar-brand, .header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link, .post .more a, .sidebar-left, .sidebar-right, body {
+  background-color: var(--color-bg);
+  color: var(--color-font);
+  font-family: "Share Tech Mono", monospace;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid var(--color-hr);
+  margin: 1em 0;
+  padding: 0;
+  width: 100px;
+  margin: 5px auto 15px auto;
+}
+
+.post hr.end {
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+
+.post .more {
+  text-align: right;
+}
+
+.post .more a {
+  text-decoration: none;
+}
+
+.sidebar-left .widget, .sidebar-right .widget {
+  width: 100%;
+  box-sizing: border-box;
+  background: #6f00ab;
+  border-radius: 1em;
+  border-color: #6f00ab;
 }

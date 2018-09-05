@@ -1,0 +1,33 @@
+
+$theme-color: (
+    "bg": #222222,
+    "font": #c8c8c8,
+    "hr": invert(#222222),
+);
+
+@function get-color($name) {
+    @if map-has-key($theme-color, $name){
+        @return var(--color-#{$name});
+    }
+    @else{
+        @error "Sorry, but `#{$name}` is a undefined color in collection colors.";
+    }
+}
+
+
+@mixin theme-colors-to-css-var() {
+    :root{
+        @each $name, $color in $theme-color {
+            --color-#{$name}: #{$color};
+        }
+    }
+    //@each $name, $color in $theme-color {
+    //    .bg-#{$name} {
+    //        background: get-color($name) !important;
+    //    }
+    //    .font-#{$name}{
+    //        color: get-color($name) !important;
+    //    }
+    //}
+}
+@include theme-colors-to-css-var();

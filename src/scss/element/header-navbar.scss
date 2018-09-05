@@ -1,0 +1,12 @@
+.header-navbar
+{
+    @extend %default;
+    .navbar-brand
+    {
+        @extend %default;
+    }
+    .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link
+    {
+        @extend %default;
+    }
+}

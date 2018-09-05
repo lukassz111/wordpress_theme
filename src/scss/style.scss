@@ -1,1 +1,14 @@
 @import "lib";
+@import "font";
+@import "var";
+@import "color";
+@import "shared";
+
+@import "element/header-navbar";
+@import "element/post";
+@import "element/sidebar";
+
+body
+{
+    @extend %default;
+}

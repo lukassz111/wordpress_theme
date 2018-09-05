@@ -1,0 +1,18 @@
+%default
+{
+    background-color: get-color('bg');
+    color: get-color('font');
+    font-family: $font;
+}
+
+hr
+{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid get-color('hr');
+    margin: 1em 0;
+    padding: 0; 
+    width: 100px;
+    margin: 5px auto 15px auto;
+}
