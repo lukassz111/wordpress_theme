@@ -1,14 +1,12 @@
 <?php
 
 function add_scripts() {
-    $jsSrc = get_template_directory_uri().'/lib/js/';
-    $cssSrc = get_template_directory_uri().'/';
-    //wp_enqueue_script('jquery');
-    wp_enqueue_script('jqueryx',$jsSrc.'jquery.min.js');
-    wp_enqueue_script('popper.js', $jsSrc.'popper.min.js');
-    wp_enqueue_script('bootstrap', $jsSrc.'bootstrap.min.js');
+    $assetsSrc = get_template_directory_uri().'/assets/';
+    $jsSrc = $assetsSrc;
+    $cssSrc = $assetsSrc;
 
-    wp_enqueue_style("main",$cssSrc.'main.css');
+    wp_enqueue_script('bundle_js', $assetsSrc.'bundle.js');
+    wp_enqueue_style("bundle_css",$assetsSrc.'bundle.css');
 }
 add_action( 'wp_enqueue_scripts', 'add_scripts' );
 

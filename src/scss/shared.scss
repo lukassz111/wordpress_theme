@@ -16,3 +16,12 @@ hr
     width: 100px;
     margin: 5px auto 15px auto;
 }
+
+a[href]
+{
+    color: get-color('font');
+}
+a[href]:hover
+{
+    color: get-color('font-link-hover');
+}

@@ -1,50 +1,48 @@
+const webpackConfig = require('./webpack.config');
+
 module.exports = function(grunt) {
 
   grunt.initConfig({
     config: {
         srcDir: "src/",
         libDir: 'node_modules/',
-        debug: false
+        assetsDir: "assets/"
     },
     watch: {
-      files: ['<%= config.srcDir %>/scss/**/*.scss'],
-      tasks: ['build']
+      files: [
+          '<%= config.srcDir %>/scss/**/*.scss',
+          '<%= config.srcDir %>/js/**/*.js'
+        ],
+      tasks: ['dev']
     },
     sass: {
-        dist: {
-            sourceMap: '<%= config.debug %>',
+        prod: {
+            sourceMap: false,
             files: {
-                'main.css': '<%= config.srcDir %>/scss/style.scss'
+                '<%= config.assetsDir %>/bundle.css': '<%= config.srcDir %>/scss/style.scss'
+            }
+        },
+        dev: {
+            sourceMap: true,
+            files: {
+                '<%= config.assetsDir %>/bundle.css': '<%= config.srcDir %>/scss/style.scss'
             }
         }
     },
-    copy: {
-        dist: {
-            files: [
-                {// Copy js libs
-                    expand: true,
-                    cwd: '<%= config.libDir %>',
-                    src: [
-                        'bootstrap/dist/js/bootstrap.min.js',
-                        'popper.js/dist/umd/popper.min.js',
-                        'jquery/dist/jquery.min.js'
-                    ],
-                    dest: 'lib/js/',
-                    flatten: true,
-                    filter: 'isFile'
-                }
-            ],
-        },
-    },
+    webpack: {
+        prod: webpackConfig,
+        dev: Object.assign({ mode: 'development' }, webpackConfig)
+    }
   });
 
   
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sassjs');
-  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-webpack');
 
-  grunt.registerTask('build', ['sass']);
-  grunt.registerTask('lib',['copy']);
-  grunt.registerTask('default', ['watch']);
+  grunt.registerTask('build', ['sass:prod','webpack:prod']);
+  grunt.registerTask('dev',['sass:dev','webpack:dev']);
+
+  grunt.registerTask('default', ['dev','watch']);
 
 };

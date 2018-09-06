@@ -9,4 +9,9 @@
     {
         @extend %default;
     }
+    .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link:hover
+    {
+        @extend %default;
+        color: get-color('font-link-hover');
+    }
 }

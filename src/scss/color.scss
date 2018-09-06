@@ -1,8 +1,13 @@
-
+$theme-color-bg: #222222;
+$theme-color-font: #c8c8c8;
 $theme-color: (
-    "bg": #222222,
-    "font": #c8c8c8,
-    "hr": invert(#222222),
+    "bg": $theme-color-bg,
+    "font": $theme-color-font,
+    "hr": invert($theme-color-bg),
+    "widget-frame": invert($theme-color-bg),
+    "font-link-hover": #ffc66d,//darken($theme-color-font,50)
+    "font-quote": invert($theme-color-font),
+    "bg-quote": invert($theme-color-bg)
 );
 
 @function get-color($name) {

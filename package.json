@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "js_dev": "npx webpack --mode development",
+    "js_prod": "npx webpack --mode production",
+    "build": "npx grunt build",
+    "watch": "npx grunt"
   },
   "repository": {
     "type": "git",
@@ -17,10 +20,15 @@
   },
   "homepage": "https://github.com/lukassz111/wordpress_theme#readme",
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
     "grunt": "^1.0.3",
-    "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-sassjs": "^0.1.8",
-    "grunt-contrib-watch": "^1.1.0"
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-webpack": "^3.1.3",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
   },
   "dependencies": {
     "bootstrap": "^4.1.3",
