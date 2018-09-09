@@ -25,16 +25,18 @@ module.exports = function(grunt) {
         }
     },
     sass: {
-        prod: {
-            sourceMap: false,
-            files: {
-                '<%= config.assetsDir %>/bundle.css': '<%= config.srcDir %>/scss/style.scss'
-            }
-        },
         dev: {
             sourceMap: true,
             files: {
-                '<%= config.assetsDir %>/bundle.css': '<%= config.srcDir %>/scss/style.scss'
+                '<%= config.assetsDir %>/bundle.css': '<%= config.srcDir %>/scss/style.scss',
+                '<%= config.assetsDir %>/color.css': '<%= config.srcDir %>/scss/color.scss'
+            }
+        },
+        prod: {
+            sourceMap: false,
+            files: {
+                '<%= config.assetsDir %>/bundle.css': '<%= config.srcDir %>/scss/style.scss',
+                '<%= config.assetsDir %>/color.css': '<%= config.srcDir %>/scss/color.scss'
             }
         }
     },

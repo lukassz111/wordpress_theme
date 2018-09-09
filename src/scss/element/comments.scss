@@ -4,8 +4,66 @@
     {
         width: 100%;
     }
-    input, textarea
+    input, input:hover, input:focus, input:required,
+    textarea, textarea:hover, textarea:focus, textarea:required
     {
         @extend .form-control;
+        background: get-color('bg-secondary');
+        border-color: get-color('border');
+        color: get-color('font');
+    }
+    button, input[type=button], input[type=submit]
+    {
+        background: get-color('bg-btn');
+        color: get-color('font-btn');
+    }
+    label
+    {
+        color: get-color('font');
+    }
+    .comment-form
+    {
+        letter-spacing: -1em;
+        p
+        {
+            letter-spacing: 0em;
+        }
+        .comment-form-author, .comment-form-email
+        {
+            display: inline-block;
+            width: 49%;
+        }
+        .comment-form-author
+        {
+            margin-right: 1%;
+        }
+        .comment-form-email
+        {
+            margin-left: 1%;
+        }
+    }
+    .comments-list > div
+    {
+        box-sizing: border-box;
+        min-width: 96px;
+        
+        & > .comment-author
+        {
+            display: flex;
+            align-items: center;
+            width: 20%;
+            float: left;
+            min-width: 96px
+        }
+        & > .comment-content
+        {
+            min-width: 96px
+        }
+        hr
+        {
+            clear: both;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
     }
 }

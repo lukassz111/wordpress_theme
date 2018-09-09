@@ -13,7 +13,17 @@
     list-style-type: none;
     .widgettitle
     {
-        text-align: right;
+        text-align: center;
         padding-right: 1em;
+    }
+}
+
+.widget_calendar
+{
+    table
+    {
+        width: 99%;
+        display: inline-table;
+        text-align: center;
     }
 }

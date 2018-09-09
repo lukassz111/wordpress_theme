@@ -1,13 +1,17 @@
 $theme-color-bg: #0C0C0D;
-$theme-color-font: rgba(255,255,255,0.5);
+$theme-color-font: rgba(255,255,255,1);
 $theme-color: (
     "bg": $theme-color-bg,
+    "bg-secondary": lighten($theme-color-bg,30),
     "font": $theme-color-font,
     "hr": invert($theme-color-bg),
     "widget-frame": invert($theme-color-bg),
     "font-link-hover": #ffc66d,//darken($theme-color-font,50)
+    "bg-btn": #ffc66d,
+    "font-btn": $theme-color-bg,
     "font-quote": invert($theme-color-font),
-    "bg-quote": invert($theme-color-bg)
+    "bg-quote": invert($theme-color-bg),
+    "border": mix($theme-color-bg,lighten($theme-color-bg,30),0.5)
 );
 
 @function get-color($name) {

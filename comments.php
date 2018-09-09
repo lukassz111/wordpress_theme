@@ -13,13 +13,21 @@ $comments = $comments_query->query( $args );
         <?php comment_form(); ?>
         <hr>
     </div>
-    <div>
+    <div class="comments-list">
         <?php if ( $comments ): foreach ( $comments as $comment ): ?>
         <div>
-            <p><?php echo $comment -> comment_author; ?></p>
-            <p><?php echo $comment -> comment_date; ?></p>
-            <p><?php echo $comment -> comment_content; ?></p>
+            <div class="comment-author">
+                <?php echo get_avatar( $comment->comment_author_email, 96 );; ?>
+                <div>
+                    <p><?php echo $comment -> comment_author; ?></p>
+                    <p><?php echo $comment -> comment_date; ?></p>
+                </div>
+            </div>
+            <div class="comment-content">
+                <?php echo $comment -> comment_content; ?>
+            </div>
             <hr>
+            <!--<code><pre><?php print_r($comment); ?></pre></code>-->
         </div>
         <?php endforeach; else: echo 'No comments found.'; endif; ?>
     </div>

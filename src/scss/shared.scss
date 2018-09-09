@@ -26,3 +26,7 @@ a[href]:hover
     color: get-color('font-link-hover');
     text-decoration: none;
 }
+pre
+{
+    color: get-color('font');
+}

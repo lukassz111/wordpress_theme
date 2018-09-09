@@ -1,0 +1,14 @@
+/*# sourceMappingURL=color.css.map */
+:root {
+  --color-bg: #0C0C0D;
+  --color-bg-secondary: #55555d;
+  --color-font: white;
+  --color-hr: #f3f3f2;
+  --color-widget-frame: #f3f3f2;
+  --color-font-link-hover: #ffc66d;
+  --color-bg-btn: #ffc66d;
+  --color-font-btn: #0C0C0D;
+  --color-font-quote: black;
+  --color-bg-quote: #f3f3f2;
+  --color-border: #55555c;
+}
