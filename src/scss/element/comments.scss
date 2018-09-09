@@ -1,0 +1,11 @@
+.comments
+{
+    hr
+    {
+        width: 100%;
+    }
+    input, textarea
+    {
+        @extend .form-control;
+    }
+}

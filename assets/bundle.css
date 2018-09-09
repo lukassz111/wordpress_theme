@@ -1,3 +1,4 @@
+/*# sourceMappingURL=bundle.css.map */
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -1656,7 +1657,7 @@ pre code {
   border: 0;
 }
 
-.form-control {
+.form-control, .comments input, .comments textarea {
   display: block;
   width: 100%;
   height: calc(2.25rem + 2px);
@@ -1672,17 +1673,17 @@ pre code {
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-  .form-control {
+  .form-control, .comments input, .comments textarea {
     transition: none;
   }
 }
 
-.form-control::-ms-expand {
+.form-control::-ms-expand, .comments input::-ms-expand, .comments textarea::-ms-expand {
   background-color: transparent;
   border: 0;
 }
 
-.form-control:focus {
+.form-control:focus, .comments input:focus, .comments textarea:focus {
   color: #495057;
   background-color: #fff;
   border-color: #80bdff;
@@ -1690,12 +1691,12 @@ pre code {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
-.form-control::placeholder {
+.form-control::placeholder, .comments input::placeholder, .comments textarea::placeholder {
   color: #6c757d;
   opacity: 1;
 }
 
-.form-control:disabled, .form-control[readonly] {
+.form-control:disabled, .comments input:disabled, .comments textarea:disabled, .form-control[readonly], .comments input[readonly], .comments textarea[readonly] {
   background-color: #e9ecef;
   opacity: 1;
 }
@@ -1771,7 +1772,7 @@ select.form-control[size], select.form-control[multiple] {
   height: auto;
 }
 
-textarea.form-control {
+textarea.form-control, .comments textarea {
   height: auto;
 }
 
@@ -1854,22 +1855,26 @@ textarea.form-control {
   border-radius: 0.25rem;
 }
 
-.was-validated .form-control:valid, .form-control.is-valid, .was-validated
+.was-validated .form-control:valid, .was-validated .comments input:valid, .comments .was-validated input:valid, .was-validated .comments textarea:valid, .comments .was-validated textarea:valid, .form-control.is-valid, .comments input.is-valid, .comments textarea.is-valid, .was-validated
 .custom-select:valid,
 .custom-select.is-valid {
   border-color: #28a745;
 }
 
-.was-validated .form-control:valid:focus, .form-control.is-valid:focus, .was-validated
+.was-validated .form-control:valid:focus, .was-validated .comments input:valid:focus, .comments .was-validated input:valid:focus, .was-validated .comments textarea:valid:focus, .comments .was-validated textarea:valid:focus, .form-control.is-valid:focus, .comments input.is-valid:focus, .comments textarea.is-valid:focus, .was-validated
 .custom-select:valid:focus,
 .custom-select.is-valid:focus {
   border-color: #28a745;
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
 
-.was-validated .form-control:valid ~ .valid-feedback,
-.was-validated .form-control:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback,
-.form-control.is-valid ~ .valid-tooltip, .was-validated
+.was-validated .form-control:valid ~ .valid-feedback, .was-validated .comments input:valid ~ .valid-feedback, .comments .was-validated input:valid ~ .valid-feedback, .was-validated .comments textarea:valid ~ .valid-feedback, .comments .was-validated textarea:valid ~ .valid-feedback,
+.was-validated .form-control:valid ~ .valid-tooltip,
+.was-validated .comments input:valid ~ .valid-tooltip, .comments
+.was-validated input:valid ~ .valid-tooltip,
+.was-validated .comments textarea:valid ~ .valid-tooltip, .comments
+.was-validated textarea:valid ~ .valid-tooltip, .form-control.is-valid ~ .valid-feedback, .comments input.is-valid ~ .valid-feedback, .comments textarea.is-valid ~ .valid-feedback,
+.form-control.is-valid ~ .valid-tooltip, .comments input.is-valid ~ .valid-tooltip, .comments textarea.is-valid ~ .valid-tooltip, .was-validated
 .custom-select:valid ~ .valid-feedback,
 .was-validated
 .custom-select:valid ~ .valid-tooltip,
@@ -1957,22 +1962,26 @@ textarea.form-control {
   border-radius: 0.25rem;
 }
 
-.was-validated .form-control:invalid, .form-control.is-invalid, .was-validated
+.was-validated .form-control:invalid, .was-validated .comments input:invalid, .comments .was-validated input:invalid, .was-validated .comments textarea:invalid, .comments .was-validated textarea:invalid, .form-control.is-invalid, .comments input.is-invalid, .comments textarea.is-invalid, .was-validated
 .custom-select:invalid,
 .custom-select.is-invalid {
   border-color: #dc3545;
 }
 
-.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus, .was-validated
+.was-validated .form-control:invalid:focus, .was-validated .comments input:invalid:focus, .comments .was-validated input:invalid:focus, .was-validated .comments textarea:invalid:focus, .comments .was-validated textarea:invalid:focus, .form-control.is-invalid:focus, .comments input.is-invalid:focus, .comments textarea.is-invalid:focus, .was-validated
 .custom-select:invalid:focus,
 .custom-select.is-invalid:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
 }
 
-.was-validated .form-control:invalid ~ .invalid-feedback,
-.was-validated .form-control:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback,
-.form-control.is-invalid ~ .invalid-tooltip, .was-validated
+.was-validated .form-control:invalid ~ .invalid-feedback, .was-validated .comments input:invalid ~ .invalid-feedback, .comments .was-validated input:invalid ~ .invalid-feedback, .was-validated .comments textarea:invalid ~ .invalid-feedback, .comments .was-validated textarea:invalid ~ .invalid-feedback,
+.was-validated .form-control:invalid ~ .invalid-tooltip,
+.was-validated .comments input:invalid ~ .invalid-tooltip, .comments
+.was-validated input:invalid ~ .invalid-tooltip,
+.was-validated .comments textarea:invalid ~ .invalid-tooltip, .comments
+.was-validated textarea:invalid ~ .invalid-tooltip, .form-control.is-invalid ~ .invalid-feedback, .comments input.is-invalid ~ .invalid-feedback, .comments textarea.is-invalid ~ .invalid-feedback,
+.form-control.is-invalid ~ .invalid-tooltip, .comments input.is-invalid ~ .invalid-tooltip, .comments textarea.is-invalid ~ .invalid-tooltip, .was-validated
 .custom-select:invalid ~ .invalid-feedback,
 .was-validated
 .custom-select:invalid ~ .invalid-tooltip,
@@ -2061,7 +2070,7 @@ textarea.form-control {
     align-items: center;
     margin-bottom: 0;
   }
-  .form-inline .form-control {
+  .form-inline .form-control, .form-inline .comments input, .comments .form-inline input, .form-inline .comments textarea, .comments .form-inline textarea {
     display: inline-block;
     width: auto;
     vertical-align: middle;
@@ -3110,7 +3119,7 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
-.input-group > .form-control,
+.input-group > .form-control, .comments .input-group > input, .comments .input-group > textarea,
 .input-group > .custom-select,
 .input-group > .custom-file {
   position: relative;
@@ -3119,19 +3128,27 @@ input[type="button"].btn-block {
   margin-bottom: 0;
 }
 
-.input-group > .form-control + .form-control,
-.input-group > .form-control + .custom-select,
-.input-group > .form-control + .custom-file,
-.input-group > .custom-select + .form-control,
+.input-group > .form-control + .form-control, .comments .input-group > input + .form-control, .comments .input-group > textarea + .form-control, .comments .input-group > .form-control + input, .comments .input-group > input + input, .comments .input-group > textarea + input, .comments .input-group > .form-control + textarea, .comments .input-group > input + textarea, .comments .input-group > textarea + textarea,
+.input-group > .form-control + .custom-select, .comments
+.input-group > input + .custom-select, .comments
+.input-group > textarea + .custom-select,
+.input-group > .form-control + .custom-file, .comments
+.input-group > input + .custom-file, .comments
+.input-group > textarea + .custom-file,
+.input-group > .custom-select + .form-control, .comments
+.input-group > .custom-select + input, .comments
+.input-group > .custom-select + textarea,
 .input-group > .custom-select + .custom-select,
 .input-group > .custom-select + .custom-file,
-.input-group > .custom-file + .form-control,
+.input-group > .custom-file + .form-control, .comments
+.input-group > .custom-file + input, .comments
+.input-group > .custom-file + textarea,
 .input-group > .custom-file + .custom-select,
 .input-group > .custom-file + .custom-file {
   margin-left: -1px;
 }
 
-.input-group > .form-control:focus,
+.input-group > .form-control:focus, .comments .input-group > input:focus, .comments .input-group > textarea:focus,
 .input-group > .custom-select:focus,
 .input-group > .custom-file .custom-file-input:focus ~ .custom-file-label {
   z-index: 3;
@@ -3141,13 +3158,13 @@ input[type="button"].btn-block {
   z-index: 4;
 }
 
-.input-group > .form-control:not(:last-child),
+.input-group > .form-control:not(:last-child), .comments .input-group > input:not(:last-child), .comments .input-group > textarea:not(:last-child),
 .input-group > .custom-select:not(:last-child) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.input-group > .form-control:not(:first-child),
+.input-group > .form-control:not(:first-child), .comments .input-group > input:not(:first-child), .comments .input-group > textarea:not(:first-child),
 .input-group > .custom-select:not(:first-child) {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -3220,7 +3237,7 @@ input[type="button"].btn-block {
   margin-top: 0;
 }
 
-.input-group-lg > .form-control,
+.input-group-lg > .form-control, .comments .input-group-lg > input, .comments .input-group-lg > textarea,
 .input-group-lg > .input-group-prepend > .input-group-text,
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
@@ -3232,7 +3249,7 @@ input[type="button"].btn-block {
   border-radius: 0.3rem;
 }
 
-.input-group-sm > .form-control,
+.input-group-sm > .form-control, .comments .input-group-sm > input, .comments .input-group-sm > textarea,
 .input-group-sm > .input-group-prepend > .input-group-text,
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
@@ -8491,16 +8508,18 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 :root {
-  --color-bg: #222222;
-  --color-font: #c8c8c8;
-  --color-hr: #dddddd;
-  --color-widget-frame: #dddddd;
+  --color-bg: #0C0C0D;
+  --color-font: rgba(255, 255, 255, 0.5);
+  --color-hr: #f3f3f2;
+  --color-widget-frame: #f3f3f2;
   --color-font-link-hover: #ffc66d;
-  --color-font-quote: #373737;
-  --color-bg-quote: #dddddd;
+  --color-font-quote: rgba(0, 0, 0, 0.5);
+  --color-bg-quote: #f3f3f2;
 }
 
-.header-navbar, .header-navbar .navbar-brand, .header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link, .header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link:hover, .post .more a, .sidebar-left, .sidebar-right, .widget, body {
+.header-navbar, .header-navbar .navbar-brand, .header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link,
+.header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > a, .header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link:hover,
+.header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > a:hover, .post .more a, .sidebar-left, .sidebar-right, .widget, body {
   background-color: var(--color-bg);
   color: var(--color-font);
   font-family: "Share Tech Mono", monospace;
@@ -8523,10 +8542,16 @@ a[href] {
 
 a[href]:hover {
   color: var(--color-font-link-hover);
+  text-decoration: none;
 }
 
-.header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link:hover {
+.header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link:hover,
+.header-navbar .navbar-collapse > .navbar-nav > .navbar-nav > a:hover {
   color: var(--color-font-link-hover);
+}
+
+.header-navbar .navbar-collapse > ul > li {
+  margin-left: 10px;
 }
 
 .post hr.end {
@@ -8560,6 +8585,10 @@ a[href]:hover {
 .widget .widgettitle {
   text-align: right;
   padding-right: 1em;
+}
+
+.comments hr {
+  width: 100%;
 }
 
 .wp-block-code {

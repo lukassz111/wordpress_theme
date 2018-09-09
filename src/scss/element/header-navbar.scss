@@ -5,13 +5,19 @@
     {
         @extend %default;
     }
-    .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link
+    .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link,
+    .navbar-collapse > .navbar-nav > .navbar-nav > a
     {
         @extend %default;
     }
-    .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link:hover
+    .navbar-collapse > .navbar-nav > .navbar-nav > .nav-link:hover,
+    .navbar-collapse > .navbar-nav > .navbar-nav > a:hover
     {
         @extend %default;
         color: get-color('font-link-hover');
+    }
+    .navbar-collapse > ul > li
+    {
+        margin-left: 10px;
     }
 }

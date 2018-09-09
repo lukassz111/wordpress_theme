@@ -24,4 +24,5 @@ a[href]
 a[href]:hover
 {
     color: get-color('font-link-hover');
+    text-decoration: none;
 }

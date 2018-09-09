@@ -8,6 +8,7 @@
 @import "element/post";
 @import "element/sidebar";
 @import "element/widget";
+@import "element/comments";
 
 @import "wp-class";
 
@@ -15,3 +16,4 @@ body
 {
     @extend %default;
 }
+

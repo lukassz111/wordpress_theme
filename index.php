@@ -9,7 +9,10 @@
             <div class="col-md-10 col-lg-8">
             <?php
                 if(is_singular())
+                {
                     get_template_part('part/post');
+                    get_template_part('part/comments');
+                }
                 else
                     get_template_part('part/post','short');
             ?>
