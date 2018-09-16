@@ -25,14 +25,13 @@
             switch(get_option('hosting'))
             {
                 case 1:
-                    $topOffset += 177;
+                    $topOffset += 160;
                     break;
             }
             $style[':root']['--generated-topOffset'] = $topOffset.'px';
 
             $style['.fixed-top']['top'] = 'var(--generated-topOffset)';
-            $style['.offsetTop']['height'] = 'var(--generated-topOffset)';
-            $style['.offsetTop']['background'] = 'var(--color-bg)';
+            $style['.header']['margin-top'] = 'var(--generated-topOffset)';
 
             foreach($style as $selector => $rules)
             {
@@ -56,8 +55,6 @@
                 echo $tag;
             }
         ?>
-        <div class="offsetTop">
-        </div>
         <header class="header">
             <nav class="navbar fixed-top navbar-expand-md navbar-dark header-navbar">
                 <a class="navbar-brand mb-0 h1" href="<?php echo get_site_url(); ?>"><?php bloginfo('name'); ?></a>
