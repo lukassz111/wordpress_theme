@@ -7,7 +7,58 @@
         <?php wp_head(); ?>
     </head>
     <body>
-        <header>
+        <?php
+            $styleStr = "";
+            $topOffset = 0;
+            $scriptStr = '';
+            $style = [];
+            if(is_user_logged_in())
+            {
+                $topOffset += 32;
+                $scriptStr .= 'var wordpressOffsetTop = 32;';
+            }
+            else
+            {
+                $scriptStr .= 'var wordpressOffsetTop = 0;';
+            }
+
+            switch(get_option('hosting'))
+            {
+                case 1:
+                    $topOffset += 177;
+                    break;
+            }
+            $style[':root']['--generated-topOffset'] = $topOffset.'px';
+
+            $style['.fixed-top']['top'] = 'var(--generated-topOffset)';
+            $style['.offsetTop']['height'] = 'var(--generated-topOffset)';
+            $style['.offsetTop']['background'] = 'var(--color-bg)';
+
+            foreach($style as $selector => $rules)
+            {
+                $ruleStr = "";
+                foreach($rules as $key => $value)
+                {
+                    $ruleStr .= "$key: $value;".PHP_EOL;
+                }
+                $styleStr .= "$selector {".PHP_EOL.$ruleStr."}";
+            }
+
+            $tag = '<style type="text/css">'.$styleStr.'</style>';
+            if( strlen($styleStr) > 0 )
+            {
+                echo $tag;
+            }
+            $scriptStr .= 'var themeOffsetTop = '.($topOffset-32).';';
+            $tag = '<script type="text/javascript">'.$scriptStr.'</script>';
+            if( strlen($scriptStr) > 0 )
+            {
+                echo $tag;
+            }
+        ?>
+        <div class="offsetTop">
+        </div>
+        <header class="header">
             <nav class="navbar fixed-top navbar-expand-md navbar-dark header-navbar">
                 <a class="navbar-brand mb-0 h1" href="<?php echo get_site_url(); ?>"><?php bloginfo('name'); ?></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">

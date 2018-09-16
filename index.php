@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section>
+<section class="content">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-1 col-lg-2">

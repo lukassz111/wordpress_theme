@@ -12,8 +12,12 @@
 
 @import "wp-class";
 
-body
+.header, .content, .footer 
 {
     @extend %default;
+}
+.header
+{
+    position: relative;
 }
 

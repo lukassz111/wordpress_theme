@@ -1,8 +1,12 @@
 module.exports = {
-    entry: './src/js/app.js',
+    entry: {
+        app: './src/ts/app.ts',
+        lib: './src/js/lib.js'
+    },
+    devtool: 'inline-source-map',
     output: {
         path: `${__dirname}/assets/`,
-        filename: 'bundle.js'
+        filename: '[name].js'
     },
     watch: false,
     mode: "production", //ta opcja zostanie pominięta jeżeli użyjemy npm run build
@@ -22,7 +26,14 @@ module.exports = {
                         }]]
                     }
                 }
+            },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader'
             }
-        ]
-    }
+        ],
+    },
+    resolve: {
+        extensions: [ '.tsx', '.ts', '.js' ]
+    },
 }

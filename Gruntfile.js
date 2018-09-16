@@ -13,7 +13,10 @@ module.exports = function(grunt) {
             livereload: true,
         },
         js: {
-          files: ['<%= config.srcDir %>/js/**/*.js'],
+          files: [
+              '<%= config.srcDir %>/js/**/*.js',
+              '<%= config.srcDir %>/ts/**/*.ts'
+            ],
           tasks: ['webpack:dev','notify:webpack']
         },
         scss: {
