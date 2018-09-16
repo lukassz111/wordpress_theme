@@ -31,7 +31,6 @@
             $style[':root']['--generated-topOffset'] = $topOffset.'px';
 
             $style['.fixed-top']['top'] = 'var(--generated-topOffset)';
-            $style['.header']['margin-top'] = 'var(--generated-topOffset)';
 
             foreach($style as $selector => $rules)
             {

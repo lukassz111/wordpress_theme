@@ -3,37 +3,41 @@ declare var wordpressOffsetTop: number;
 
 export class Navbar
 {
-    private headerBar: HTMLElement;
+    public headerBar: HTMLElement;
     constructor()
     {
         var header: HTMLElement = document.getElementsByTagName('header')[0];
         this.headerBar = (<any>header.getElementsByClassName('fixed-top'))[0];
+        
+        this.onscroll(this);
         window.addEventListener('scroll',() => { 
-
-            if(this.scrollY > this.topOffset)
-            {
-                this.headerBar.style.top = this.wordpressOffset+"px";
-                this.headerBar.style.position = "fixed";
-            }
-            else
-            {
-                this.headerBar.style.top = "0px";
-                this.headerBar.style.position = "absolute";
-            }
-
+            this.onscroll(this);
          });
     }
-    private get scrollY(): number
+    private onscroll(navbar: Navbar): void {
+        if(navbar.scrollY > navbar.topOffset)
+        {
+            navbar.headerBar.style.top = navbar.wordpressOffset+"px";
+            navbar.headerBar.style.position = "fixed";
+        }
+        else
+        {
+            navbar.headerBar.style.top = "0px";
+            navbar.headerBar.style.position = "absolute";
+        }
+    }
+
+    public get scrollY(): number
     {
         return window.scrollY;
     }
 
-    private get topOffset(): number
+    public get topOffset(): number
     {
         return themeOffsetTop;
     }
 
-    private get wordpressOffset(): number
+    public get wordpressOffset(): number
     {
         return wordpressOffsetTop;
     }
