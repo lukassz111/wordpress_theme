@@ -3,8 +3,23 @@
     background: get-color('bg-quote');
     color: get-color('font-quote');
     box-sizing: border-box;
-    box-shadow: inset 0px 4px 15px 2px #222222;
+    //box-shadow: inset 0px 4px 15px 2px #222222;
     border-radius: 17px;
     border:1px solid #222222;
     padding: 10px;
+}
+
+.wp-block-quote
+{
+    padding-left: 10px;
+    margin: 1rem 0 1rem 10px;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-left-color: get-color('border');
+}
+
+.wp-block-image, .wp-block-embed-youtube
+{
+    display: flex !important;
+    justify-content: center;
 }
